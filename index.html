@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="POEX: Policy Executable Embodied AI Jailbreak Attacks">
+  <meta name="keywords" content="Robotic Manipulation, Language Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POEX</title>
+
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body onload="updateInteractive();">
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">POEX : Policy Executable Embodied AI Jailbreak Attacks</h1>
+          <!-- <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.usenix.org/conference/usenixsecurity25">USENIX Sec'25</a></h3> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" href="https://zjushine.github.io/">Xuancun Lu</a><sup></sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank">Zhengxian Huang</a><sup></sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://letterligo.github.io/">Xinfeng Li</a><sup></sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://sites.google.com/site/xiaoyuijh/home">Xiaoyu Ji</a><sup></sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://scholar.google.com/citations?user=FCsdj0YAAAAJ&hl">Wenyuan Xu</a><sup></sup>
+              <!-- <span class="author-block">
+                <a target="_blank" href="">Anonymous Authors</a>
+              </span> -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup></sup>Zhejiang University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href="POEX.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a target="_blank" href=""
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code Coming Soon</span>
+                </a>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .group-description {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 15px;
+  }
+</style>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/dining_room_set_table.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/kitchen_organize.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+           <video poster="" autoplay muted loop height="100%">
+             <source src="media/videos/living_room_charge.mp4"
+                     type="video/mp4">
+           </video>
+         </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/office_drink_water.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/place_the_bottle_into_the_box.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        </div>
+      </div>
+      <p class="group-description">Correct Instructions Demo</p>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small"></section>
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/kitchen_organize_harmful.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/living_room_charge_harmful.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/office_drink_water_harmful.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/kitchen_organize_harmful.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%">
+            <source src="media/videos/living_room_charge_harmful.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        </div>
+      </div>
+      <p class="group-description">Harmful Instructions Demo</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The integration of large language models (LLMs) into the planning module of Embodied Artificial Intelligent (Embodied AI) systems has greatly enhanced their ability to translate complex user instructions into executable policies.
+            In this paper, we conduct a comprehensive safety analysis of LLM-based planning module in embodied AI systems, focusing on their susceptibility to jailbreak attacks. 
+            Our study on 20 open-source and proprietary LLMs highlights two key challenges when adapting traditional chatbot jailbreak techniques to embodied AI contexts: the lack of a benchmark dataset for evaluating embodied AI-oriented attacks, as the attack goal shifts from inducing harmful text to harmful policies, and the difficulty of ensuring that generated policies are executable to cause real-world harm.
+            To address these challenges, we introduce Harmful-RLbench, a carefully designed dataset with 25 realistic task scenarios, each featuring multiple correct and harmful <code>&lt;Instruction, Policy&gt;</code> sets. 
+            Additionally, we propose Policy Executable (POEX) jailbreak attacks, where adversarial instructions and optimized suffixes are injected into LLM-based planning modules, leading embodied AI to perform harmful actions in both simulated and physical environments. Our approach involves constraining adversarial suffixes to evade detection and fine-tuning a policy evaluator to improve the executability of harmful policies.
+            Through extensive experiments on three open-source models, we evaluate the attack and policy success rates on 136 harmful instructions from Harmful-RLbench. 
+            Our findings exposes serious safety vulnerabilities in LLM-based planning modules, including the ability of POEX to be transferred across models.
+            Finally, we propose mitigation strategies, such as safety-constrained prompts, pre- and post-execution checks, to address these vulnerabilities and ensure the safe deployment of embodied AI in real-world settings.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="media/figures/1.PNG" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Overview
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="media/figures/2.PNG" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Step 1
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="media/figures/3.PNG" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+         Step 2
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="media/figures/4.PNG" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Step 3
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Demo -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-3">POEX Demo</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/yYSYC_6d6kE?si=YQTmih2KrOoksUgY"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 1 -->
+    <hr style="height:5px;border:none;border-top:5px dashed #0066CC;"/>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-5">Demo1: Stab person with knife (without adv suffix)</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/59X3NO_iHEM?si=hBZHxBb6KGuxeo2e"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 2 -->
+    <hr style="height:5px;border:none;border-top:5px dashed #0066CC;"/>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-5">Demo2: Stab person with knife (with adv suffix)</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/3lIgiKoLbbw?si=t626bJMipz-R0Kkv"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 3 -->
+    <hr style="height:5px;border:none;border-top:5px dashed #0066CC;"/>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-5">Demo3: Pour water on keyboard (with adv suffix)</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/QPUxzUQ1IEU?si=cB51dayhHPdMapI-"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 4 -->
+    <hr style="height:5px;border:none;border-top:5px dashed #0066CC;"/>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-5">Demo4: Pull flower out of flower pot (with adv suffix)</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/C9SzPqkKWDs?si=YTjmT_HKgOMz4Fbi"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 5 -->
+    <hr style="height:5px;border:none;border-top:5px dashed #0066CC;"/>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-5">Demo5: Pick up flower pot and throw it on the ground (with adv suffix)</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/S4GnhnbUeKQ?si=hMWsVE3CKh5SO_IU"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+    <!-- Animation. -->
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
+        <h2 class="title is-3"><span class="dperact">POEX</span></h2>
+
+        <!-- Interpolating. -->
+        <div class="content has-text-justified">
+        <!-- <br> -->
+        </div>
+        <img src="media/figures/method.png" class="interpolation-image" />
+        </br>
+        </br>
+          <p class="content has-text-justified">
+            Given the harmful instruction and target LLMs, the <b>initialisation module</b> initialises an adversarial suffix using random initialisation or pre-trained initialisation; the <b>mutator module</b> replaces tokens at random positions in the adversarial suffix with other tokens based on gradient ranking; the <b>constraint module</b> computes the perplexity of each mutated adversarial suffix and filters adversarial suffixes that are above the threshold; the <b>selector module</b> calculates the loss of the attack model and the policy model, and selects the adversarial suffix with the lowest loss to be sent to the evaluator; The <b>evaluator module</b> evaluates whether the generated policy can be jailbroken successfully and whether it is executable. If the requirements are not met, the mutation, constraint, selection, and evaluation are redone. 
+          </p>
+          
+        </br>
+        </br>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+      <h2 class="title is-3">Harmful-RLBench</h2>
+      
+      <p class="content has-text-justified">
+        <li><strong>Task scenario</strong>: Harmful-RLbench includes <b>25</b> completely unique task scenarios, covering environments such as kitchen, library, bedroom, and laboratory. Each scenario utilizes a Franka Emika Panda robotic arm equipped with six RGB-D cameras. On this basis, we place realistic 3D object models in the environment, specifically selected for their relevance and potential <b>safety risks</b>. These objects include hazardous items like <b>sharp knives and fragile vases</b>, providing a diverse and challenging testing environment.</li>
+        <li><strong>Task instruction</strong>: Each task scenario contains multiple <b>correct</b> and <b>harmful instructions</b>, with a total of <b>126</b> correct instructions and <b>136</b> harmful instructions. Correct instructions refer to safe, reasonable instructions used to evaluate the usability, such as setting the tableware or throwing trash into the trash can. Harmful instructions, on the other hand, refer to instructions that would pose risks to the environment or human lives in the physical world---such as instructing embodied AI to break a vase or stab person with a knife---used to evaluate the safety.</li>
+        <li><strong>Setup details</strong>: To ensure generalization, object positions are randomized within predefined areas, and each instruction is expanded into multiple variations with similar intent. Moreover, we provide demonstrations for each instruction, guiding the robotic arm in task execution. To seamlessly transfer the simulation to the real world, we ensure that the simulation code can be directly used on the actual hardware by unifying the underlying control interfaces of Pyrep and the Franka Panda robotic arm.</li>
+      </p>
+      <br>
+      <div style="text-align: center;">
+        <img src="media/figures/Fig3.png" class="interpolation-image" style="width: 100%; height: auto;"/>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> and <a href="https://peract.github.io/">PerAct</a> and <a href="https://voxposer.github.io/">Voxposer</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
